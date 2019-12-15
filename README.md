@@ -29,7 +29,7 @@ $ nucli
 
 ## CLI Usage
 
-### Example 1
+### Main
 
 Demonstrates calling *nucli* directly from shell without requiring the file to be executable or prefaced with python3:
 
@@ -44,13 +44,24 @@ Commands:
   ping-sweep
 ```
 
-### Example 2
+### ping-sweep
 
-Demonstrates the *ping-sweep* tool being executed from *nucli* CLI:
+Demonstrates the *ping-sweep* tool being executed from *nucli* CLI.
+
+IPv4 example:
 
 ```
 $ nucli ping-sweep --start 192.0.2.198 --end 192.0.2.200
 192.0.2.198 failed to respond
 192.0.2.199 failed to respond
 192.0.2.200 responded
+```
+
+IPv6 example:
+
+```
+$ nucli ping-sweep --start fe80::20c:29ff:fe7a:bcf3 --end fe80::20c:29ff:fe7a:bcf5 --iface ens33
+fe80::20c:29ff:fe7a:bcf3 responded
+fe80::20c:29ff:fe7a:bcf4 failed to respond
+fe80::20c:29ff:fe7a:bcf5 failed to respond
 ```
