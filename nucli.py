@@ -15,5 +15,9 @@ def ping_sweep(start, end):
 
 nucli.add_command(ping_sweep)
 
+def click_entry():
+    """Entry Point for Setuptools Integration with Click."""
+    nucli()
+
 if __name__ == '__main__':
     nucli()
