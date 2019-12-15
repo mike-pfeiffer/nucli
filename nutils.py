@@ -3,18 +3,26 @@
 import os
 import subprocess
 import sys
-import netaddr
-from netaddr import *
+
+from netaddr import (IPAddress, IPRange, IPNetwork, AddrConversionError,
+    AddrFormatError, NotRegisteredError)
+
+LINK_LOCAL = IPNetwork('FE80::/10')
 
 class PingTools:
 
-    def ping_range(start, end):
+    @staticmethod
+    def ping_range(start, end, iface):
+        """
+        """
+
+        cmd = 'ping'
+        options = '-c 3 -W 1 -qn'
         available_hosts = []
         
         try:
             start = IPAddress(start)
             end = IPAddress(end)
-
             start_ver = start.version
             end_ver = end.version
 
@@ -24,10 +32,16 @@ class PingTools:
                 sys.exit("Version mismatch: start = IPv" + str(start_ver)
                     + ", end = IPv" + str(end_ver))
 
+            if (start in LINK_LOCAL) and (end in LINK_LOCAL):
+                if iface:
+                    iface = "%" + iface.lower()
+                else:
+                    sys.exit("IPv6 LLA requires an interface source")
+
             for ip in ip_range:
                 ip = str(ip)
                 echo_reply = subprocess.call(
-                    ['ping', '-c', '3', '-W', '1', '-qn', str(ip)], 
+                    [cmd, options, str(ip) + iface], 
                     stdout=open(os.devnull,'wb')
                     )
                 if echo_reply == 0:
@@ -36,11 +50,11 @@ class PingTools:
                 elif echo_reply== 1:
                     print(ip + " failed to respond")
 
-        except netaddr.AddrConversionError as e:
-            print(e)
-        except netaddr.AddrFormatError as e:
-            print(e)
-        except netaddr.NotRegisteredError as e:
-            print(e)
+        except AddrConversionError as e:
+            sys.exit(e)
+        except AddrFormatError as e:
+            sys.exit(e)
+        except NotRegisteredError as e:
+            sys.exit(e)
         
         return available_hosts
