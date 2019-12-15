@@ -14,19 +14,11 @@ $ pip3 install -r requirements.txt
 ```
 3. Install the setup.py file
 ```
-pip3 install -e .
+$ pip3 install -e .
 ```
 4. Test your installation
 ```
 $ nucli
-Usage: nucli [OPTIONS] COMMAND [ARGS]...
-
-Options:
-  --help  Show this message and exit.
-
-Commands:
-  ping-sweep
-
 ```
 
 ## Python Libraries
