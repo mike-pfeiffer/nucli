@@ -65,3 +65,18 @@ fe80::20c:29ff:fe7a:bcf3 responded
 fe80::20c:29ff:fe7a:bcf4 failed to respond
 fe80::20c:29ff:fe7a:bcf5 failed to respond
 ```
+
+## Getting Help
+
+All classes and functions will be documented using docstrings.  To access launch an interactive Python session from the shell, import the modules, and use the help function as shown below.
+
+```
+$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import nutils
+>>> import nucli
+>>> help(nutils)
+>>> help(nucli)
+```
