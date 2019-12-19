@@ -2,6 +2,10 @@
 
 The network-utilities repository is meant to be a collection of commonly used tools for network administrators.  These tools are bundled under *nutils* as functions within broader classes.  The *nutils* library can be used independently of the *nucli* command line option.  *nucli* is supported by Click and provides a simple CLI for leveraging the tools found in *nutils*.
 
+## System Requirements
+
+Built and tested on Ubuntu 18.04.3
+
 ## Initial Setup
 
 1. Clone the repository
