@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import click
-from nutils import *
+from nutils import ping_tools
 
 @click.group()
 def nucli():
@@ -12,7 +12,8 @@ def nucli():
 @click.option('--end', default = '', help='(optional) Ending IP Address')
 @click.option('--iface', default= '', help='(optional) Source Interface')
 def ping_sweep(start, end, iface):
-    PingTools.ping_range(start, end, iface)
+    ping_tools.ping_range(start, end, iface)
+
 
 nucli.add_command(ping_sweep)
 
