@@ -2,13 +2,13 @@ from setuptools import setup
 
 setup(
     name='nucli',
-    version='0.1',
+    version='0.2',
     py_modules=['nucli'],
     install_requires=[
         'Click',
     ],
     entry_points='''
         [console_scripts]
-        nucli=nucli:click_entry
+        nucli=app.nucli:click_entry
     ''',
 )

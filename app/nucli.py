@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import click
-from nutils import ping_tools
+from .nettools.ping import PingTools
 
 @click.group()
 def nucli():
@@ -11,11 +11,11 @@ def nucli():
 @click.option('--start', help='Starting IP Address')
 @click.option('--end', default = '', help='(optional) Ending IP Address')
 @click.option('--iface', default= '', help='(optional) Source Interface')
-def ping_sweep(start, end, iface):
-    ping_tools.ping_range(start, end, iface)
+def ping_range(start, end, iface):
+    PingTools.ping_range(start, end, iface)
 
 
-nucli.add_command(ping_sweep)
+nucli.add_command(ping_range)
 
 def click_entry():
     '''Entry Point for Setuptools Integration with Click.'''
