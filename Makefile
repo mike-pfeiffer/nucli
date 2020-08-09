@@ -13,4 +13,4 @@ test:
 	pytest tests/test_*
 
 lint:
-	flake8 app tests
+	flake8 app tests --extend-ignore=E402,F401
