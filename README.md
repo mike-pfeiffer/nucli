@@ -72,11 +72,16 @@ $ nucli
 $ deactivate
 ```
 
-## Python Libraries
+## Linting & Testing
 
-[netaddr](https://netaddr.readthedocs.io/en/latest/introduction.html)
+1. Navigate to **nucli** folder if not already in the directory
 
-[click](https://click.palletsprojects.com/en/7.x/)
+2. Run make options for **lint** and **test**
+
+```shell
+(env) ~/nucli$ make lint
+(env) ~/nucli$ make test
+```
 
 ## CLI Usage
 
