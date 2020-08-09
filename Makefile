@@ -8,4 +8,6 @@ install:
 clean:
 	rm -rf env
 	rm -rf nucli.egg-info
-	
+
+test:
+	pytest tests/test_*
