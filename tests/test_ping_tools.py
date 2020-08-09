@@ -1,5 +1,5 @@
 import unittest
-from context import app
+from .context import app
 
 LOOPBACK = "127.0.0.1"
 
