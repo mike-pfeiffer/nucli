@@ -13,7 +13,20 @@ IPV6_LINK_LOCAL = IPNetwork("FE80::/10")
 class PingTools:
 
     def ping(self, ip, iface):
-        """
+        """Ping user-defined range of IP addresses to check for liveliness
+
+        Parameters
+        ----------
+        ip : str
+            host ip address
+        iface : str
+            Interface name
+
+        Returns
+        -------
+        boolean
+            A boolean representing IP reachability
+
         """
         try:
 
@@ -49,24 +62,10 @@ class PingTools:
         iface : str
             Interface name
 
-        Raises
-        ------
-        AddrConversionError
-            Netaddr custom exception
-            "a failure to convert between address types or notations"
-        AddrFormatError
-            Netaddr custom exception
-            "a network address is not correctly formatted."
-        NotRegisteredError
-            Netaddr custom exception
-            "an OUI or IAB was not found in the IEEE Registry"
-        ValueError
-            Handles IPRange exception in netaddr library
-
         Returns
         -------
-        list
-            A list of IP addresses that responded to ping
+        dict
+            A dict of IP addresses and boolean for liveliness
 
         """
 
