@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import click
-from .nettools.ping import PingTools
+from .nettools.ping_tools import PingTools
 
 @click.group()
 def nucli():
@@ -12,7 +12,9 @@ def nucli():
 @click.option('--end', default = '', help='(optional) Ending IP Address')
 @click.option('--iface', default= '', help='(optional) Source Interface')
 def ping_range(start, end, iface):
-    PingTools.ping_range(start, end, iface)
+    pt = PingTools()
+    pr = pt.ping_range(start, end, iface)
+    print(pr)
 
 
 nucli.add_command(ping_range)
