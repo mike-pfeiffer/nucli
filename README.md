@@ -6,7 +6,7 @@ Network Utilities CLI (nucli) is a collection of commonly used tools for network
 
 Built and tested on Ubuntu 18.04.3
 
-## Setup
+## Setup (venv)
 
 1. Clone the repository and change directory to nucli
 
