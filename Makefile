@@ -11,3 +11,6 @@ clean:
 
 test:
 	pytest tests/test_*
+
+lint:
+	flake8 app tests
