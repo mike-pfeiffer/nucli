@@ -5,31 +5,37 @@ import subprocess
 import sys
 
 from netaddr import (IPAddress, IPRange, IPNetwork, AddrConversionError,
-    AddrFormatError, NotRegisteredError)
+                     AddrFormatError, NotRegisteredError)
 
 IPV6_LINK_LOCAL = IPNetwork("FE80::/10")
+
 
 class PingTools:
 
     def ping(self, ip, iface):
         """
         """
-        cmd = "ping"
-        options = "-c 1 -W 1 -qn"
-        echo_request = []
+        try:
 
-        if iface:
-            echo_request = [cmd, '-I', iface, options, ip]
-        else:
-            echo_request = [cmd, options, ip]
-        
-        echo_reply = subprocess.call(echo_request,
-                                     stdout=open(os.devnull,'wb'))
+            cmd = "ping"
+            options = "-c 1 -W 1 -qn"
+            echo_request = []
 
-        if echo_reply == 0:
-            return True
-        else:
-            return False
+            if iface:
+                echo_request = [cmd, '-I', iface, options, ip]
+            else:
+                echo_request = [cmd, options, ip]
+
+            echo_reply = subprocess.call(echo_request,
+                                         stdout=open(os.devnull, 'wb'))
+
+            if echo_reply == 0:
+                return True
+            else:
+                return False
+
+        except TypeError as e:
+            sys.exit(e)
 
     def ping_range(self, start, end, iface):
         """Ping user-defined range of IP addresses to check for liveliness
