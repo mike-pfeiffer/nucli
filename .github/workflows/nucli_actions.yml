@@ -20,9 +20,8 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        python3 -m pip 
-	pip3 install -r requirements.txt 
-	pip3 install -e .
+	python -m pip install --upgrade pip
+        pip3 install -r requirements.txt 
     - name: Lint with flake8
       run: |
         flake8 app tests --extend-ignore=E402,F401
