@@ -1,1 +1,1 @@
-from .nettools.ping import PingTools
+from .nettools.ping_tools import PingTools
