@@ -6,7 +6,36 @@ Network Utilities CLI (nucli) is a collection of commonly used tools for network
 
 Built and tested on Ubuntu 18.04.3
 
-## Setup (venv)
+## Setup (Makefile)
+
+1. Clone the repository and change directory to nucli
+
+```shell
+$ git clone git clone https://github.com/pfeiffermj/nucli.git
+$ cd nucli
+```
+
+2. Run the Makefile and activate virtual environment
+
+```shell
+$ make install
+$ . env/bin/activate
+```
+
+3. Test your installation and begin using
+
+```shell
+$ nucli
+```
+
+4. When finished deactivate and clean
+
+```shell
+$ deactivate
+$ make clean
+```
+
+## Setup (manual)
 
 1. Clone the repository and change directory to nucli
 
