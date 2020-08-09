@@ -1,3 +1,5 @@
+![nucli workflow](https://github.com/pfeiffermj/nucli/workflows/nucli%20workflow/badge.svg)
+
 # nucli
 
 Network Utilities CLI (nucli) is a collection of commonly used tools for network engineers.
