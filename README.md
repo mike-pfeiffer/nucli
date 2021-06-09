@@ -13,7 +13,7 @@ Built and tested on Ubuntu 18.04.3
 1. Clone the repository and change directory to nucli
 
 ```shell
-$ git clone git clone https://github.com/pfeiffermj/nucli.git
+$ git clone https://github.com/pfeiffermj/nucli.git
 $ cd nucli
 ```
 
